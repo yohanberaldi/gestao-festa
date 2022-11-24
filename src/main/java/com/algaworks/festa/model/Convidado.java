@@ -22,6 +22,10 @@ public class Convidado implements Serializable {
 	
 	private Integer quantidadeAcompanhantes;
 	
+	private String dataNascimento;
+	
+	private Presente presente;
+	
 	public Long getId() {
 		return id;
 	}
@@ -46,6 +50,22 @@ public class Convidado implements Serializable {
 		this.quantidadeAcompanhantes = quantidadeAcompanhantes;
 	}
 	
+	public String getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+	
+	public Presente getPresente() {
+		return presente;
+	}
+
+	public void setPresente(Presente presente) {
+		this.presente = presente;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

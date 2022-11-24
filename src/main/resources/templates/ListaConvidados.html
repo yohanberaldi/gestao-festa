@@ -21,24 +21,38 @@
 			<form class="form-inline" method="POST" th:object="${convidado}"
 				th:action="@{/convidados/salvar}" style="margin: 20px 0">
 				<div class="form-inline">
-					<input type="text" class="form-inline" placeholder="Nome"
-						th:field="*{nome}" /> 
-					<input type="text" class="form-inline"
-						placeholder="Acompanhantes" th:field="*{quantidadeAcompanhantes}" />
+					<input type="text" class="form-inline" placeholder="Nome" th:field="*{nome}" /> 
+					<input type="text" class="form-inline" placeholder="Acompanhantes" th:field="*{quantidadeAcompanhantes}" />
+					<input type="date" class="form-inline" placeholder="Data Nascimento" th:field="*{dataNascimento}" />
 					<button type="submit" class="btn btn-primary">Adicionar</button>
 				</div>
 			</form>
 			<table class="table">
 				<thead>
 					<tr>
+						<th>ID</th>
 						<th>Nome</th>
 						<th>Acompanhantes</th>
+						<th>Data Nascimento</th>
+						<th>Presente</th>
+						<th>Ação</th>
+						<th>Ação</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="convidado : ${convidados}">
+						<td th:text="${convidado.id}"></td>
 						<td th:text="${convidado.nome}"></td>
 						<td th:text="${convidado.quantidadeAcompanhantes}"></td>
+						<td th:text="${convidado.dataNascimento}"></td>
+						<td th:text="${convidado.presente.nome}"></td>
+						<td>
+							<form method="POST" th:object="${convidado.id}"
+								th:action="@{'/convidados/deletar/{id}'(id=${convidado.id})}" style="width: 1px ">
+								<button type="submit" class="btn btn-danger ml-2">Deletar</button>
+							</form>
+						</td>
+						<td><a th:href="@{/convidados/formularioUpdate(idConvidado=${convidado.id})}" class="btn btn-info">Update</a></td>
 					</tr>
 				</tbody>
 			</table>
@@ -46,13 +60,11 @@
 	</div>
 </body>
 <script type="text/javascript">
-
-function alertar(){
+function alertar() {
 	let mensagem = document.getElementById("mensagem").value;
-	if (mensagem){
+	if (mensagem) {
 		alert(mensagem);
 	}
 };
-
 </script>
 </html>

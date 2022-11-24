@@ -3,13 +3,16 @@ package com.algaworks.festa.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.algaworks.festa.exception.ConvidadoLimiteAcompanhanteException;
+import com.algaworks.festa.exception.ConvidadoMenorDeIdadeException;
 import com.algaworks.festa.exception.ConvidadoNomeJaExisteException;
 import com.algaworks.festa.model.Convidado;
 import com.algaworks.festa.service.ConvidadoService;
@@ -18,7 +21,6 @@ import com.algaworks.festa.service.ConvidadoService;
 @RequestMapping("/convidados")
 public class ConvidadosController {
 
-	
 	@Autowired
 	private ConvidadoService convidadoService;
 
@@ -33,17 +35,51 @@ public class ConvidadosController {
 	}
 
 	@PostMapping("/salvar")
-	public RedirectView salvar(Convidado convidado, RedirectAttributes attributes){
+	public RedirectView salvar(Convidado convidado, RedirectAttributes attributes) {
 		String mensagem;
 		try {
-			convidadoService.insertConvidado(convidado);
+			convidadoService.saveConvidado(convidado);
 			mensagem = "Inserido com sucesso.";
-		} catch (ConvidadoNomeJaExisteException e) {
-			mensagem = e.getMessage();
-		} catch (ConvidadoLimiteAcompanhanteException e) {
+		
+		} catch (ConvidadoNomeJaExisteException | ConvidadoLimiteAcompanhanteException | ConvidadoMenorDeIdadeException e) {
 			mensagem = e.getMessage();
 		}
-	
+
+		attributes.addAttribute("mensagem", mensagem);
+		return new RedirectView("/convidados/listar");
+	}
+
+	@PostMapping("/deletar/{id}")
+	public String deletar(@PathVariable Long id, RedirectAttributes attributes) {
+		String mensagem;
+
+		convidadoService.deleteConvidado(id);
+		mensagem = "Convidado ID: " + id + " apagado com sucesso.";
+
+		attributes.addAttribute("mensagem", mensagem);
+		return "redirect:/convidados/listar";
+	}
+
+	@GetMapping("/formularioUpdate")
+	public ModelAndView update(String mensagem, @RequestParam Long idConvidado) {
+		ModelAndView modelAndView = new ModelAndView("update-form"); // o construtor recebe o nome da view
+		Convidado convidado = convidadoService.getConvidadoById(idConvidado);
+		modelAndView.addObject("convidado", convidado);
+		modelAndView.addObject("mensagem", mensagem);
+
+		return modelAndView;
+	}
+
+	@PostMapping("/updateConvidado")
+	public RedirectView updateConvidado(Convidado convidado, RedirectAttributes attributes) {
+		String mensagem;
+		try {
+			convidadoService.saveConvidado(convidado);
+			mensagem = "Atualizado com sucesso.";
+		} catch (ConvidadoNomeJaExisteException | ConvidadoLimiteAcompanhanteException | ConvidadoMenorDeIdadeException e) {
+			mensagem = e.getMessage();
+		}
+
 		attributes.addAttribute("mensagem", mensagem);
 		return new RedirectView("/convidados/listar");
 	}
