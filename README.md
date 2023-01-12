@@ -19,3 +19,26 @@ A seguir é possível ver algumas telas do sistema para entender seu funcionamen
 <p>Adicionando um convidado</p>
 
 ![tela_adicionando_convidado_2](https://user-images.githubusercontent.com/107574302/212149630-17040f45-e29d-49a9-9e91-cf239c09798d.png)
+
+![tela_adicionado_sucesso](https://user-images.githubusercontent.com/107574302/212150099-850170b1-06a1-4d49-a6c2-1af0fcfcf9e5.png)
+
+<p>Convidado deletado com sucesso</p>
+
+![tela_delete_sucesso](https://user-images.githubusercontent.com/107574302/212150510-87fc37b5-389b-4de7-b9ed-db050b0e4f09.png)
+
+<p>Convidado atualizado com sucesso</p>
+
+![tela_update_presente_dropbox](https://user-images.githubusercontent.com/107574302/212150676-67b6a1d9-3ecb-45f8-9dcf-f9eafcf25f4c.png)
+
+![tela_update_sucesso](https://user-images.githubusercontent.com/107574302/212150791-cd15e874-5524-4fe3-8182-d7b0c61cd353.png)
+
+<p>Regras de negócio</p>
+
+![tela_erro_qtde_acompanhantes](https://user-images.githubusercontent.com/107574302/212151352-23bc547b-ef07-4292-808e-e707ab9af133.png)
+
+![tela_erro_idade](https://user-images.githubusercontent.com/107574302/212151298-232c74a2-29a4-41a7-81c8-4ef893b0e60a.png)
+
+![tela_erro_presente_cadastrado](https://user-images.githubusercontent.com/107574302/212151439-d3f47762-9d89-44ca-b45f-0c29797939e4.png)
+
+![tela_erro_nome](https://user-images.githubusercontent.com/107574302/212151496-2cca14a2-d413-4d93-9b79-529403fc9206.png)
+
