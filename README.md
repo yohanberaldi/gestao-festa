@@ -26,7 +26,7 @@ A seguir é possível ver algumas telas do sistema para entender seu funcionamen
 
 ![tela_delete_sucesso](https://user-images.githubusercontent.com/107574302/212150510-87fc37b5-389b-4de7-b9ed-db050b0e4f09.png)
 
-<p>Convidado atualizado com sucesso</p>
+<p>Atualizando um convidado</p>
 
 ![tela_update_presente_dropbox](https://user-images.githubusercontent.com/107574302/212150676-67b6a1d9-3ecb-45f8-9dcf-f9eafcf25f4c.png)
 
