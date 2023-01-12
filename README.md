@@ -22,7 +22,7 @@ A seguir é possível ver algumas telas do sistema para entender seu funcionamen
 
 ![tela_adicionado_sucesso](https://user-images.githubusercontent.com/107574302/212150099-850170b1-06a1-4d49-a6c2-1af0fcfcf9e5.png)
 
-<p>Convidado deletado com sucesso</p>
+<p>Deletando um convidado</p>
 
 ![tela_delete_sucesso](https://user-images.githubusercontent.com/107574302/212150510-87fc37b5-389b-4de7-b9ed-db050b0e4f09.png)
 
@@ -41,4 +41,18 @@ A seguir é possível ver algumas telas do sistema para entender seu funcionamen
 ![tela_erro_presente_cadastrado](https://user-images.githubusercontent.com/107574302/212151439-d3f47762-9d89-44ca-b45f-0c29797939e4.png)
 
 ![tela_erro_nome](https://user-images.githubusercontent.com/107574302/212151496-2cca14a2-d413-4d93-9b79-529403fc9206.png)
+
+<p>Organização dos pacotes do projeto</p>
+
+![tela_classes](https://user-images.githubusercontent.com/107574302/212152557-93874ea6-0739-41b9-ad7b-3246b7424e2a.png)
+
+<p>Classes Controller, REST e Service</p>
+
+![tela_convidados_controller](https://user-images.githubusercontent.com/107574302/212152069-f834380f-458c-4174-bf6d-dbab97e77059.png)
+
+![tela_convidado_service](https://user-images.githubusercontent.com/107574302/212152088-f9507798-efb9-428e-93fd-d0aabfc9ced6.png)
+
+![tela_convidado_rest_controller](https://user-images.githubusercontent.com/107574302/212152110-b46f7557-98f8-4c1b-a27d-0c4dfe319729.png)
+
+
 
