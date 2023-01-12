@@ -18,7 +18,7 @@ A seguir é possível ver algumas telas do sistema para entender seu funcionamen
 
 <p>Adicionando um convidado</p>
 
-![tela_adicionando_convidado_2](https://user-images.githubusercontent.com/107574302/212149630-17040f45-e29d-49a9-9e91-cf239c09798d.png)
+![tela_adicionando_convidado_1](https://user-images.githubusercontent.com/107574302/212153320-66814432-d76c-4ece-bc90-bcee2564065f.png)
 
 ![tela_adicionado_sucesso](https://user-images.githubusercontent.com/107574302/212150099-850170b1-06a1-4d49-a6c2-1af0fcfcf9e5.png)
 
