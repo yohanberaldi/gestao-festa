@@ -58,6 +58,15 @@ A seguir é possível ver algumas telas do sistema para entender seu funcionamen
 
 ![tela_convidado_rest_controller](https://user-images.githubusercontent.com/107574302/212152110-b46f7557-98f8-4c1b-a27d-0c4dfe319729.png)
 
+<p>Inserção de dados através do hibernate</p>
 
+![tela_hibernate_insert](https://user-images.githubusercontent.com/107574302/212154475-5e5e8f43-86e6-48c2-b96a-090d006000dd.png)
 
+<p>Exemplo de form usando thymeleaf</p>
+
+![tela_presente_form](https://user-images.githubusercontent.com/107574302/212154489-58f0a108-7aae-476f-a831-b3fb59c2d13c.png)
+
+<p>Testes implementados</p>
+
+![tela_testes](https://user-images.githubusercontent.com/107574302/212154496-2e78772f-ce0c-4300-a6a0-0cbf0f2b3c11.png)
 
