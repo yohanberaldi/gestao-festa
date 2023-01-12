@@ -50,9 +50,14 @@ A seguir é possível ver algumas telas do sistema para entender seu funcionamen
 
 ![tela_convidados_controller](https://user-images.githubusercontent.com/107574302/212152069-f834380f-458c-4174-bf6d-dbab97e77059.png)
 
+![tela_convidado_service_2](https://user-images.githubusercontent.com/107574302/212152967-bacfef97-90dc-4a19-b995-30a9a780cf11.png)
+
 ![tela_convidado_service](https://user-images.githubusercontent.com/107574302/212152088-f9507798-efb9-428e-93fd-d0aabfc9ced6.png)
 
+![tela_convidado_rest_controller_2](https://user-images.githubusercontent.com/107574302/212153015-71a6c39e-6ae3-4cb3-89fd-0e59256c6657.png)
+
 ![tela_convidado_rest_controller](https://user-images.githubusercontent.com/107574302/212152110-b46f7557-98f8-4c1b-a27d-0c4dfe319729.png)
+
 
 
 
