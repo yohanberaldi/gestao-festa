@@ -3,7 +3,7 @@ Projeto em Spring com versão web e API RESTful
 
 Este projeto contém uma aplicação que utiliza Spring Boot, Spring MVC, Spring Data JPA, Thymeleaf e API RESTful usando o Spring Tool Suite (STS), uma IDE baseada no Eclipse.
 
-Consiste em um sistema de controle do tipo CRUD de uma lista de convidados, onde é possível adicionar convidados, deletar convidados, editar dados do convidado e adicionar um presente para cada convidado. Possui regras de negócios pensando em possíveis histórias dos usuários, atendendo diversos tipos de demandas. Abaixo seguem alguns exemplos.
+Consiste em um sistema de controle do tipo CRUD de uma lista de convidados, onde é possível adicionar convidados, deletar convidados, editar dados do convidado e adicionar um presente para cada convidado. Possui regras de negócios pensando em possíveis histórias dos usuários, atendendo diversos tipos de demandas. Seguem alguns exemplos.
 "Eu como (ator - dono da festa) preciso controlar o acesso ao evento para não exceder a capacidade de lotação do local onde a festa será realizada." - Foi implementada uma regra de negócio que estabelece uma quantidade máxima de 3 acompanhantes para cada convidado.
 "Eu como (ator - dono da festa) desejo saber qual presente cada convidado trouxe para poder agradecer após a festa" - Foi implementada a possibilidade de um registro pré e pós festa para o cadastro dos presentes.
 "Eu como (ator - dono da festa) desejo saber se o convidado tem mais de 18 anos, pois, serão servidas bebidas alcólicas na festa." Foi implementada uma regra de negócio que verifica a data de nascimento, comparando com a data atual, só aceitando a inserção do registro caso o convidado tenha mais de 18 anos.
@@ -70,3 +70,16 @@ A seguir é possível ver algumas telas do sistema para entender seu funcionamen
 
 ![tela_testes](https://user-images.githubusercontent.com/107574302/212154496-2e78772f-ce0c-4300-a6a0-0cbf0f2b3c11.png)
 
+<p>API RESTful</p>
+
+![tela_rest_delete](https://user-images.githubusercontent.com/107574302/212157205-0fb9f77f-5d44-4266-b3da-5ae0da81438c.png)
+
+![tela_rest_get](https://user-images.githubusercontent.com/107574302/212157210-8e77134b-90eb-491d-92c2-d3e8d14450f0.png)
+
+![tela_rest_post](https://user-images.githubusercontent.com/107574302/212157212-25e1c50e-ef6c-4fd6-b85b-5749d1e63694.png)
+
+![tela_rest_put](https://user-images.githubusercontent.com/107574302/212157213-8f5a476e-43dc-4417-a8fb-8ba5adad024e.png)
+
+![tela_rest_erro_1](https://user-images.githubusercontent.com/107574302/212157253-abb5892e-9fb8-4e4f-b7de-2467d105cfc6.png)
+
+![tela_rest_erro_2](https://user-images.githubusercontent.com/107574302/212157258-17a45852-6d0b-43c2-9595-6ca5fce908d9.png)
