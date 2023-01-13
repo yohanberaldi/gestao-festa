@@ -9,7 +9,7 @@
 
 <ul>
 <li>"Eu como (ator - dono da festa) preciso controlar o acesso ao evento para não exceder a capacidade de lotação do local onde a festa será realizada." - Foi implementada uma regra de negócio que estabelece uma quantidade máxima de 3 acompanhantes para cada convidado.</li>
-<li>"Eu como (ator - dono da festa) desejo saber qual presente cada convidado trouxe para poder agradecer após a festa" - Foi implementada a possibilidade de um registro pré e pós festa para o cadastro dos presentes.</li>
+<li>"Eu como (ator - dono da festa) desejo saber qual presente cada convidado trouxe para poder agradecer após a festa." - Foi implementada a possibilidade de um registro pré e pós festa para o cadastro dos presentes.</li>
 <li>"Eu como (ator - dono da festa) desejo saber se o convidado tem mais de 18 anos, pois, serão servidas bebidas alcólicas na festa." Foi implementada uma regra de negócio que verifica a data de nascimento, comparando com a data atual, só aceitando a inserção do registro caso o convidado tenha mais de 18 anos.</li>
 <li>"Eu como (ator - dono da festa) desejo que não haja registros de nomes iguais, para evitar problemas na lista de acesso à festa." Foi implementada uma regra de negócio que verifica se o nome do convidado já não consta no registro de convidados.</li>
 </ul>
