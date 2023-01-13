@@ -5,7 +5,7 @@
 
 <p>Consiste em um sistema de controle de uma lista de convidados, utilizando o modelo de operações CRUD, onde é possível criar, deletar, atualizar e recuperar elementos de cada convidado contido na mesma. Também possui uma API RESTful integrada com as camadas de serviços do projeto.</p>
 
-<p>As regras de negócios foram desenvolvidas baseadas na metodologia BDD (Desenvolvimento Orientado ao Comportamento) pensando em possíveis histórias dos usuários, para atender seus diversos tipos de demandas. Seguem alguns exemplos.</p>
+<p>As regras de negócios foram desenvolvidas baseadas na metodologia BDD (Desenvolvimento Orientado ao Comportamento) pensando em possíveis histórias dos usuários, para atender seus diversos tipos de demandas. Seguem alguns exemplos:</p>
 
 <ul>
 <li>"Eu como (ator - dono da festa) preciso controlar o acesso ao evento para não exceder a capacidade de lotação do local onde a festa será realizada." - Foi implementada uma regra de negócio que estabelece uma quantidade máxima de 3 acompanhantes para cada convidado.</li>
