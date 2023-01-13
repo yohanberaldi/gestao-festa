@@ -66,7 +66,7 @@ A seguir é possível ver algumas telas do sistema para entender seu funcionamen
 
 ![tela_hibernate_insert](https://user-images.githubusercontent.com/107574302/212154475-5e5e8f43-86e6-48c2-b96a-090d006000dd.png)
 
-<h4>Exemplo de form usando thymeleaf</h4>
+<h4>Exemplo de form usando Thymeleaf</h4>
 
 ![tela_presente_form](https://user-images.githubusercontent.com/107574302/212154489-58f0a108-7aae-476f-a831-b3fb59c2d13c.png)
 
