@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
+import com.algaworks.festa.exception.ConvidadoDataNascimentoExisteException;
 import com.algaworks.festa.exception.ConvidadoLimiteAcompanhanteException;
 import com.algaworks.festa.exception.ConvidadoMenorDeIdadeException;
 import com.algaworks.festa.exception.ConvidadoNomeJaExisteException;
@@ -41,7 +42,7 @@ public class ConvidadosController {
 			convidadoService.saveConvidado(convidado);
 			mensagem = "Inserido com sucesso.";
 		
-		} catch (ConvidadoNomeJaExisteException | ConvidadoLimiteAcompanhanteException | ConvidadoMenorDeIdadeException e) {
+		} catch (ConvidadoNomeJaExisteException | ConvidadoLimiteAcompanhanteException | ConvidadoMenorDeIdadeException | ConvidadoDataNascimentoExisteException e) {
 			mensagem = e.getMessage();
 		}
 
@@ -76,7 +77,7 @@ public class ConvidadosController {
 		try {
 			convidadoService.saveConvidado(convidado);
 			mensagem = "Atualizado com sucesso.";
-		} catch (ConvidadoNomeJaExisteException | ConvidadoLimiteAcompanhanteException | ConvidadoMenorDeIdadeException e) {
+		} catch (ConvidadoNomeJaExisteException | ConvidadoLimiteAcompanhanteException | ConvidadoMenorDeIdadeException | ConvidadoDataNascimentoExisteException e) {
 			mensagem = e.getMessage();
 		}
 

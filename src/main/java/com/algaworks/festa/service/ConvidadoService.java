@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.algaworks.festa.exception.ConvidadoDataNascimentoExisteException;
 import com.algaworks.festa.exception.ConvidadoLimiteAcompanhanteException;
 import com.algaworks.festa.exception.ConvidadoMenorDeIdadeException;
 import com.algaworks.festa.exception.ConvidadoNomeJaExisteException;
@@ -45,11 +46,12 @@ public class ConvidadoService {
 		return convidadoRepository.findById(id).get();
 	}
 
-	public Convidado saveConvidado(Convidado convidado) throws ConvidadoNomeJaExisteException, ConvidadoLimiteAcompanhanteException, ConvidadoMenorDeIdadeException {
+	public Convidado saveConvidado(Convidado convidado) throws ConvidadoNomeJaExisteException, ConvidadoLimiteAcompanhanteException, ConvidadoMenorDeIdadeException, ConvidadoDataNascimentoExisteException {
 		Convidado convidadoBanco = convidadoRepository.findByNome(convidado.getNome());
+		Convidado convidadoDataNascimento = convidadoRepository.findByDataNascimento(convidado.getDataNascimento());
 		
 		if(!isMaiorDeIdade(convidado.getDataNascimento())){
-			throw new ConvidadoMenorDeIdadeException("Convidado é menor de idade!");
+			throw new ConvidadoMenorDeIdadeException("A idade mínima permitida é de 18 anos.");
 		}
 		
 		if (isConvidadoExisteComIdDiferente(convidado, convidadoBanco)) {
@@ -59,7 +61,9 @@ public class ConvidadoService {
 		if (convidado.getQuantidadeAcompanhantes() > 3) {
 			throw new ConvidadoLimiteAcompanhanteException("Excedeu a quantidade de acompanhantes permitidos.");
 		}
-		
+		if (isDataNascimentoExiste(convidado, convidadoDataNascimento)) {
+			throw new ConvidadoDataNascimentoExisteException("A data de nascimento não é única no banco de dados.");
+		}
 		return convidadoRepository.save(convidado);
 	}
 	
@@ -68,6 +72,13 @@ public class ConvidadoService {
 			return false;
 		
 		return convidado.getNome().equals(convidadoBanco.getNome()) && convidado.getId() != convidadoBanco.getId();
+	}
+	
+	protected boolean isDataNascimentoExiste (Convidado convidado, Convidado convidadoDataNascimento) {
+		if (convidadoDataNascimento == null)
+			return false;
+		
+		return convidado.getDataNascimento().equals(convidadoDataNascimento.getDataNascimento())&& convidado.getId() != convidadoDataNascimento.getId();
 	}
 	
 	protected boolean isMaiorDeIdade(String data) {
@@ -79,6 +90,7 @@ public class ConvidadoService {
 	public void deleteConvidado(Long id) {
 		convidadoRepository.deleteById(id);
 	}
+	
 	
 
 }

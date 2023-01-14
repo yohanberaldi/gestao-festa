@@ -21,10 +21,11 @@
 			<form class="form-inline" method="POST" th:object="${convidado}"
 				th:action="@{/convidados/updateConvidado}">
 				<div class="form-inline">
-					<input type="hidden" class="form-inline" placeholder="ID"
-						th:field="*{id}" style="margin: 4px"/><input type="text" class="form-inline" placeholder="Nome"
-						th:field="*{nome}" /> <input type="text" class="form-inline"
-						placeholder="Acompanhantes" th:field="*{quantidadeAcompanhantes}" />
+					<input type="hidden" class="form-inline" placeholder="ID" th:field="*{id}" style="margin: 4px"/>
+					<input type="text" class="form-inline" placeholder="Nome" th:field="*{nome}" /> 
+					<input type="text" class="form-inline" placeholder="Acompanhantes" th:field="*{quantidadeAcompanhantes}" />
+					<input type="hidden" class="form-inline" placeholder="Data Nascimento" th:field="*{dataNascimento}" /> 
+					<input type="hidden" class="form-inline" placeholder="Presente" th:field="*{presente}" /> 
 					<button type="submit" class="btn btn-success">Atualizar</button>
 					</div>
 			</form>

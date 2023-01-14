@@ -51,7 +51,7 @@ public class ConvidadoServiceTests {
 	
 	@Test
 	void testConvidadoMenorDeIdade(){
-		assertFalse(convidadoService.isMaiorDeIdade("2004-11-25"));
+		assertFalse(convidadoService.isMaiorDeIdade("2005-11-25"));
 	}
 	
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.algaworks.festa.exception.ConvidadoDataNascimentoExisteException;
 import com.algaworks.festa.exception.ConvidadoLimiteAcompanhanteException;
 import com.algaworks.festa.exception.ConvidadoMenorDeIdadeException;
 import com.algaworks.festa.exception.ConvidadoNomeJaExisteException;
@@ -40,7 +41,7 @@ public class ConvidadosControllerRest {
 		try {
 			convidado = convidadoService.saveConvidado(convidado);
 			return "Convidado ID: " + convidado.getId() + " inserido.";
-		} catch (ConvidadoNomeJaExisteException | ConvidadoLimiteAcompanhanteException | ConvidadoMenorDeIdadeException e) {
+		} catch (ConvidadoNomeJaExisteException | ConvidadoLimiteAcompanhanteException | ConvidadoMenorDeIdadeException | ConvidadoDataNascimentoExisteException e) {
 			return e.getMessage();
 		}
 
@@ -59,14 +60,13 @@ public class ConvidadosControllerRest {
 		try {
 			convidadoService.saveConvidado(convidado);
 			return "Convidado ID: " + convidado.getId() + " atualizado.";
-		} catch (ConvidadoNomeJaExisteException | ConvidadoLimiteAcompanhanteException | ConvidadoMenorDeIdadeException e) {
+		} catch (ConvidadoNomeJaExisteException | ConvidadoLimiteAcompanhanteException | ConvidadoMenorDeIdadeException | ConvidadoDataNascimentoExisteException e) {
 			return e.getMessage();
 		}
 	}
 	
 	@PostMapping("/idade")
 	public int calculateAge(@RequestBody Integer year, Month month, Integer day) {
-		//birthDate = LocalDate.of(1985, Month.NOVEMBER, 04);
 		LocalDate birthDate = LocalDate.of(year, month, day);
 		LocalDate currentDate = LocalDate.now();
 		return Period.between(birthDate, currentDate).getYears();

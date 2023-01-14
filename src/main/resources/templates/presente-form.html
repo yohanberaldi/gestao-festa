@@ -20,11 +20,12 @@
 			<form method="POST" th:object="${presente}" th:action="@{/presente/salvar}">
 				<div class="mb-3">
 					<label for="nomePresente" class="form-label">Nome do Presente</label>
-					<input type="text" id="nomePresente" class="form-control" placeholder="Nome do Presente" th:field="*{nome}" />
+					<input type="text" id="nomePresente" class="form-control" placeholder="Insira o presente" th:field="*{nome}" />
 				</div>
 				<div class="mb-3">
 					<label for="convidados" class="form-label">Convidado</label>
 					<select class="form-select" id="convidados" th:field="*{idConvidado}">
+						<option value="0">- Selecione o convidado -</option>
 					    <option th:each="convidado : ${convidados}" th:value="${convidado.id}" th:text="${convidado.nome}"></option>
 					</select>
 				</div>

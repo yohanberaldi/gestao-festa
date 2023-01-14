@@ -23,7 +23,7 @@
 				<div class="form-inline">
 					<input type="text" class="form-inline" placeholder="Nome" th:field="*{nome}" /> 
 					<input type="text" class="form-inline" placeholder="Acompanhantes" th:field="*{quantidadeAcompanhantes}" />
-					<input type="date" class="form-inline" placeholder="Data Nascimento" th:field="*{dataNascimento}" />
+					<input type="date" class="form-inline text-muted" placeholder="Data Nascimento" th:field="*{dataNascimento}" />
 					<button type="submit" class="btn btn-primary">Adicionar</button>
 				</div>
 			</form>
@@ -35,8 +35,9 @@
 						<th>Acompanhantes</th>
 						<th>Data Nascimento</th>
 						<th>Presente</th>
-						<th>Ação</th>
-						<th>Ação</th>
+						<th></th>
+						<th></th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -48,11 +49,12 @@
 						<td th:text="${convidado.presente.nome}"></td>
 						<td>
 							<form method="POST" th:object="${convidado.id}"
-								th:action="@{'/convidados/deletar/{id}'(id=${convidado.id})}" style="width: 1px ">
+								th:action="@{'/convidados/deletar/{id}'(id=${convidado.id})}">
 								<button type="submit" class="btn btn-danger ml-2">Deletar</button>
 							</form>
 						</td>
-						<td><a th:href="@{/convidados/formularioUpdate(idConvidado=${convidado.id})}" class="btn btn-info">Update</a></td>
+						<td><a th:href="@{/convidados/formularioUpdate(idConvidado=${convidado.id})}" class="btn btn-info" >Update</a></td>
+						<td><a th:href="@{/presente/adicionar(idConvidado=${convidado.id})}" class="btn btn-warning">Presente</a></td>
 					</tr>
 				</tbody>
 			</table>

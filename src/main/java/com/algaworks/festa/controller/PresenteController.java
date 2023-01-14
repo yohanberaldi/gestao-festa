@@ -9,10 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
-import com.algaworks.festa.exception.ConvidadoLimiteAcompanhanteException;
-import com.algaworks.festa.exception.ConvidadoMenorDeIdadeException;
-import com.algaworks.festa.exception.ConvidadoNomeJaExisteException;
-import com.algaworks.festa.model.Convidado;
+import com.algaworks.festa.exception.ConvidadoPresenteJaExiste;
 import com.algaworks.festa.model.Presente;
 import com.algaworks.festa.service.ConvidadoService;
 import com.algaworks.festa.service.PresenteService;
@@ -40,7 +37,13 @@ public class PresenteController {
 	public RedirectView salvar(Presente presente, RedirectAttributes attributes) {
 		String mensagem;
 		
-		mensagem = "Inserido com sucesso.";
+		try {
+			presenteService.savePresente(presente);
+			mensagem = "Inserido com sucesso.";
+		
+		} catch (ConvidadoPresenteJaExiste e) {
+			mensagem = e.getMessage();
+		}
 
 		attributes.addAttribute("mensagem", mensagem);
 		return new RedirectView("/convidados/listar");
